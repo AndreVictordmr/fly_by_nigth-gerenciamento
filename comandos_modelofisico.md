@@ -5,7 +5,7 @@
 CREATE DATABASE flybynight_andre CHARACTER SET utf8mb4;
 ```
 
----
+Criando uma tabela de fornecedor
 
 ```sql
 CREATE TABLE FORNECEDOR(
