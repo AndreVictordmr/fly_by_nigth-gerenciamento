@@ -1,6 +1,8 @@
 # Referencia de comandos SQL para modelagem fisica
 ## Projeto Fly By Night - Gerenciamento de Estoque
 
+Creinado um novo banco de dado
+
 ```sql
 CREATE DATABASE flybynight_andre CHARACTER SET utf8mb4;
 ```
