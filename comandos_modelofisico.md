@@ -7,7 +7,7 @@ Criando um novo banco de dado
 CREATE DATABASE flybynight_andre CHARACTER SET utf8mb4;
 ```
 
-Criando uma tabela de fornecedor
+Criando uma tabela de fornecedor, com somente um campo
 
 ```sql
 CREATE TABLE FORNECEDOR(
