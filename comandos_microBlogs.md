@@ -1,0 +1,36 @@
+# Comandos usados para o projeto MicroBlog
+
+## Modelagem Conceitual
+
+### Criando banco de dados 
+
+```sql
+CREATE DATABASE microBlog_andre CHARACTER SET utf8mb4;
+```
+
+### Criando tabela usuario
+
+```sql
+CREATE TABLE USUARIO(
+    ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    NOME VARCHAR(100) NOT NULL,
+    SENHA VARCHAR(255) NOT NULL,
+    EMAIL VARCHAR(100) NOT NULL,
+    TIPO ENUM("admin","editor") NOT NULL
+);
+```
+
+### Criando tabela noticias
+
+```sql
+CREATE TABLE NOTICIAS(
+	ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    TITULO VARCHAR(100) NOT NULL,
+    RESUMO TEXT NOT NULL,
+    TEXTO TEXT NOT NULL,
+    IMAGEM_NOME VARCHAR(100) NOT NULL,
+    DATA DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    ID_USUARIO INT NOT NULL,
+    FOREIGN KEY(ID_USUARIO) REFERENCES USARIO(ID)
+);
+```
