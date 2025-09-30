@@ -6,7 +6,7 @@ require_once "../src/fornecedor_crud.php";
 $fornecedores = buscarFornecedores($conexao);
 
 //Testando a exibição dos dados(So para o programador)
-var_dump($fornecedores);
+//var_dump($fornecedores);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,5 +20,22 @@ var_dump($fornecedores);
         <h1>Fornecedores</h1>
         <a href="">Novo fornecedor</a>
         <a href="../index.php">⬅️Voltar</a>
+
+        <table>
+            <caption>Relação de Fornecedores</caption>
+            <tr>
+                <th>ID</th>
+                <th>NOME</th>
+            </tr>
+            <!--As linhas(tr e td) abaixo serao geradas dinamicamente, ou seja usando um loop(foreach) no array($fornecedores)-->
+            <?php foreach($fornecedores as $fornecedor){// ou : ?>
+                
+                <tr>
+                    <td><?php  ?></td>
+                    <td><?php  ?></td>
+                </tr>
+
+            <?php }//ou endforeach; ?>
+        </table>
     </body>
 </html>
