@@ -5,8 +5,11 @@ require_once "../src/fornecedor_crud.php";
 //Chama a função (passando a conexão) e receber um array associativo com os dados
 $fornecedores = buscarFornecedores($conexao);
 
-//Testando a exibição dos dados(So para o programador)
-//var_dump($fornecedores);
+/*Testando a exibição dos dados(So para o programador)
+echo "<pre>";
+var_dump($fornecedores);
+echo "</pre>";
+*/
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -31,8 +34,8 @@ $fornecedores = buscarFornecedores($conexao);
             <?php foreach($fornecedores as $fornecedor){// ou : ?>
                 
                 <tr>
-                    <td><?php  ?></td>
-                    <td><?php  ?></td>
+                    <td><?= $fornecedor['ID']; ?></td>
+                    <td><?= $fornecedor['NOME']; ?></td>
                 </tr>
 
             <?php }//ou endforeach; ?>
