@@ -14,4 +14,17 @@ function buscarFornecedores($conexao){
     return $consulta->fetchAll();
 }
 
-?>
+/* Recebe o nome de um novo fornecedor e insece no BD */
+function inserirFornecedor($conexao, $nome){
+    /*Montando o comando SQL de INSERT e APLINDO um "named parameter(parâmetro nomeado)". Um parâmetro momeado nada mais é do que reservar um espaço para atribuir um valor  */
+    $sql = "INSERT INTO FORNECEDOR (NOME) VALUES(:NOME )";
+
+    // Prepare o comando acima ANTES de executar no BD
+    $consulta = $conexao->prepare($sql);
+
+    //Anexar/atrelar/colocar um valor
+    $consulta->binValue(":NOME",$nome);
+
+    //Executamos a consulta com o comando e o valor
+    $consulta->execute();
+}
