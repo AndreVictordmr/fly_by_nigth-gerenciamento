@@ -13,11 +13,11 @@ $senha = "";//padrão no XAMPP
 Bloco condicional relacionado a verificações de erro*/
 try{
     //Crindo um objeto de conexão usando a classe PDO(driver de acesso a BD)
-    $conxao = new PDO("mysql:host=$servidor;dbname=$banco;charset=utf8",$usuario,$senha);
+    $conexao = new PDO("mysql:host=$servidor;dbname=$banco;charset=utf8",$usuario,$senha);
     //Habilitando a exibição de erros
-    $conxao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //Configurando o modo de busca de dados para o formato ARRAY ASSOCIATIVO
-    $conxao->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
+    $conexao->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
 }catch(PDOException $erro){
     die("Erro ao conectar: ".$erro->getMessage());
 }
