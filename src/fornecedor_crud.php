@@ -7,7 +7,7 @@ require_once"../conecta.php";
 /*Retornará um array associativo com os fornecedores */
 function buscarFornecedores($conexao){
     //Montamos o comando SQL para a consulta
-    $sql = "SELECT * FROM fornecedor";
+    $sql = "SELECT * FROM fornecedor ORDER BY nome";
     //Executamos o comando e gurdamos o resultado da colsuta
     $consulta=$conexao->query($sql);
     //Retornamos o resultado em formato de Array Associativo
