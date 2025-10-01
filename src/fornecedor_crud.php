@@ -56,3 +56,4 @@ function excluirFornecedor($conexao,$id){
     $consulta->bindValue(':ID',$id);
     $consulta->execute();
 }
+

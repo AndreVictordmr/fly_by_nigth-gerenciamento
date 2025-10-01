@@ -11,7 +11,7 @@
         <h2>Gerenciar</h2>
         <ul>
             <li><a href="fornecedores/lista.php">Fornecedores</a></li>
-            <li><a href="">Produtos</a></li>
+            <li><a href="produtos/lista.php">Produtos</a></li>
         </ul>
     </body>
 </html>
