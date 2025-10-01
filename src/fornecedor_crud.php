@@ -32,7 +32,7 @@ function inserirFornecedor($conexao, $nome){
 function buscarFornecedoresPorId($conexao,$id){
     $sql ="SELECT * FROM FORNECEDOR WHERE ID = :ID";
     // prepare : coloca o comando sql em memória
-    $consulta = $conexao->prepere($sql);
+    $consulta = $conexao->prepare($sql);
     //bindValue: liga o valor ($id) ao parametro(:ID)
     $consulta->bindValue(":ID",$id);
     //execute: roda a queryconsulta no banco

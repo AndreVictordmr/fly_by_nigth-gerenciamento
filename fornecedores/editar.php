@@ -3,7 +3,10 @@ require_once "../src/fornecedor_crud.php";
 //Pegando da Url o valor do parametro chamado id
 $id= $_GET['id'];
 
-buscarFornecedoresPorId($conexao,$id);
+$fornecedor = buscarFornecedoresPorId($conexao,$id);
+echo "<pre>";
+var_dump($fornecedor);
+echo"</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
