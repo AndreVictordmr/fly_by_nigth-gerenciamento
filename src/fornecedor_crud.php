@@ -28,3 +28,15 @@ function inserirFornecedor($conexao, $nome){
     //Executamos a consulta com o comando e o valor
     $consulta->execute();
 }
+/* Recebe o id do fornecedor a ser carregado (e dopois atualizar) */
+function buscarFornecedoresPorId($conexao,$id){
+    $sql ="SELECT * FROM FORNECEDOR WHERE ID = :ID";
+    // prepare : coloca o comando sql em memória
+    $consulta = $conexao->prepere($sql);
+    //bindValue: liga o valor ($id) ao parametro(:ID)
+    $consulta->bindValue(":ID",$id);
+    //execute: roda a queryconsulta no banco
+    $consulta->execute();
+    //retorna o resultado da consulta como um Array(vetor)
+    return $consulta->fetch();
+}

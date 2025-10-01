@@ -1,18 +1,9 @@
 <?php 
-    require_once "../src/fornecedor_crud.php";
-    /* Se o formulario com o metodo post for acionado */
-    if($_SERVER['REQUEST_METHOD']==='POST'){
-        //Então vamos pegar o valor do campo chamado nome(via atributo NAME)
-        $nome = $_POST['nome'];
+require_once "../src/fornecedor_crud.php";
+//Pegando da Url o valor do parametro chamado id
+$id= $_GET['id'];
 
-        //Chamamos a função, passamos os dado de conexão e o valor do nome diditado
-
-        inserirFornecedor($conexao,$nome);
-
-        //Redireciona para a pagina lista.php
-        header("location:lista.php");
-        exit;
-    }
+buscarFornecedoresPorId($conexao,$id);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

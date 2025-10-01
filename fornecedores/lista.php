@@ -38,7 +38,7 @@ echo "</pre>";
                     <td><?= $fornecedor['ID']; ?></td>
                     <td><?= $fornecedor['NOME']; ?></td>
                     <td>
-                        //Link dinamico, ou seja, a url/endereço utiliza parametro(s) e valor(es) dinamico
+                        <!--Link dinamico, ou seja, a url/endereço utiliza parametro(s) e valor(es) dinamico-->
                         <a href="editar.php?id=<?=$fornecedor['ID'] ?>">✏️Editar</a>
                         <a href="">✖️Excluir</a>
                     </td>
