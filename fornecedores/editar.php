@@ -4,9 +4,7 @@ require_once "../src/fornecedor_crud.php";
 $id= $_GET['id'];
 
 $fornecedor = buscarFornecedoresPorId($conexao,$id);
-echo "<pre>";
-var_dump($fornecedor);
-echo"</pre>";
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,10 +17,11 @@ echo"</pre>";
     <body>
         <h1>Editar fornecedor</h1>
         <form action="" method="post">
+            <input type="hidden" name="id" value="<?=$fornecedor['ID']?>">
             <div>
                 <label for="nome">Nome:</label>
                 <!-- atributo required indica um campo obrigatório-->
-                <input type="text" name="nome" id="nome" required>
+                <input value="<?=$fornecedor['NOME'] ?>" type="text" name="nome" id="nome" required>
             </div>
             <button type="submit">Atualizar</button>
         </form>
