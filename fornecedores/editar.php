@@ -5,6 +5,15 @@ $id= $_GET['id'];
 
 $fornecedor = buscarFornecedoresPorId($conexao,$id);
 
+if($_SERVER['REQUEST_METHOD']==='POST'){
+    $nome = $_POST['nome'];
+    atulizarFornecedor($conexao,$nome,$id);
+    //Após redirecionar usando header()...
+    header("location:lista.php");
+    //...Sempre encerre/interrompa o screipt(evitando erros/execuções adicionais)
+    exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

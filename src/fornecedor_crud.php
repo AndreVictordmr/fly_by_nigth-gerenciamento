@@ -40,3 +40,12 @@ function buscarFornecedoresPorId($conexao,$id){
     //retorna o resultado da consulta como um Array(vetor)
     return $consulta->fetch();
 }
+
+function atulizarFornecedor($conexao,$nome,$id) {
+    $sql="UPDATE FORNECEDOR SET NOME=:NOME WHERE ID=:ID";
+    $consulta = $conexao->prepare($sql);
+    $consulta->bindValue(":NOME",$nome);
+    $consulta->bindValue(":ID",$id);
+    $consulta->execute();
+    
+}
