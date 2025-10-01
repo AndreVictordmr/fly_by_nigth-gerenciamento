@@ -15,7 +15,7 @@ echo "</pre>";
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=], initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/style.css">
         <title>Listar Fornecedores</title>
     </head>
@@ -40,11 +40,13 @@ echo "</pre>";
                     <td>
                         <!--Link dinamico, ou seja, a url/endereço utiliza parametro(s) e valor(es) dinamico-->
                         <a href="editar.php?id=<?=$fornecedor['ID'] ?>">✏️Editar</a>
-                        <a href="excluir.php?id=<?=$fornecedor['ID']?>">✖️Excluir</a>
+                        <a href="excluir.php?id=<?=$fornecedor['ID']?>" class="excluir">✖️Excluir</a>
                     </td>
                 </tr>
 
             <?php }//ou endforeach; ?>
         </table>
+
+        <script src="../js/confirmar-exclusao.js"></script>
     </body>
 </html>
