@@ -40,7 +40,7 @@ echo "</pre>";
                     <td>
                         <!--Link dinamico, ou seja, a url/endereço utiliza parametro(s) e valor(es) dinamico-->
                         <a href="editar.php?id=<?=$fornecedor['ID'] ?>">✏️Editar</a>
-                        <a href="">✖️Excluir</a>
+                        <a href="excluir.php?id=<?=$fornecedor['ID']?>">✖️Excluir</a>
                     </td>
                 </tr>
 

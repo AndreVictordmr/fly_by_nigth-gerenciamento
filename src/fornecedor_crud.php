@@ -49,3 +49,10 @@ function atulizarFornecedor($conexao,$nome,$id) {
     $consulta->execute();
     
 }
+
+function excluirFornecedor($conexao,$id){
+    $sql = "DELETE FROM FORNECEDOR WHERE ID = :ID";
+    $consulta = $conexao->prepare($sql);
+    $consulta->bindValue(':ID',$id);
+    $consulta->execute();
+}
