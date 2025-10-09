@@ -31,4 +31,6 @@ function buscarPodutosPorId($conexao,$id){
 function excluirProduto($conexao,$id){
     $sql = "DELETE FROM PRODUTO WHERE ID=:ID";
     $consulta=$conexao->prepare($sql);
+    $consulta->bindValue(":ID",$id);
+    $consulta->execute();
 }
