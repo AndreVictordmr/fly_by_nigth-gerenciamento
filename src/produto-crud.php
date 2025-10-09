@@ -9,3 +9,26 @@ function buscarProdutos($conexao){
 
     return $consulta->fetchAll();
 }
+
+function inserirProduto($conexao,$name,$descricao,$preco,$quantidade,$id_fornecedor){
+    $sql = "INSERT INTO PRODUTO(NOME,DESCRICAO,PRECO,QUANTIDADE,ID_FORNECEDOR) Values(:nome,:descricao,:preco,:quantidade,:id)";
+    $consulta=$conexao->prepare($sql);
+
+    $consulta->bindValue(":nome",$name);
+    $consulta->bindValue(":descricao",$descricao);
+    $consulta->bindValue(":preco",$preco);
+    $consulta->bindValue(":quantidade",$quantidade);
+    $consulta->bindValue(":id",$id_fornecedor);
+
+    $consulta->execute();
+    
+}
+
+function buscarPodutosPorId($conexao,$id){
+
+}
+
+function excluirProduto($conexao,$id){
+    $sql = "DELETE FROM PRODUTO WHERE ID=:ID";
+    $consulta=$conexao->prepare($sql);
+}
