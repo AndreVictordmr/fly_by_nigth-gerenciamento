@@ -1,4 +1,6 @@
 <?php 
+    require_once '../src/produto-crud.php';
+    $produtos = buscarProdutos($conexao);
 
 ?>
 <!DOCTYPE html>
@@ -24,13 +26,13 @@
                 <th>Funçoes</th>
             </tr>
             <!--As linhas(tr e td) abaixo serao geradas dinamicamente, ou seja usando um loop(foreach) no array($fornecedores)-->
-            
+            <?php foreach($produtos as $produto){?>
                 
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?=$produto['nome_produto']?></td>
+                    <td><?=$produto['PRECO']?></td>
+                    <td><?=$produto['QUANTIDADE']?></td>
+                    <td><?=$produto['nome_fornecedor']?></td>
                     <td>
                         <!--Link dinamico, ou seja, a url/endereço utiliza parametro(s) e valor(es) dinamico-->
                         <a href="editar.php">✏️Editar</a>
@@ -38,7 +40,7 @@
                     </td>
                 </tr>
 
-            
+            <?php } ?>
         </table>
 
         <script src="../js/confirmar-exclusao.js"></script>
