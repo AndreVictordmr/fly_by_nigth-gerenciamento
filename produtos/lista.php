@@ -35,8 +35,8 @@
                     <td><?=$produto['nome_fornecedor']?></td>
                     <td>
                         <!--Link dinamico, ou seja, a url/endereço utiliza parametro(s) e valor(es) dinamico-->
-                        <a href="editar.php">✏️Editar</a>
-                        <a href="excluir.php" class="excluir">✖️Excluir</a>
+                        <a href="editar.php?id=<?=$produto['ID'] ?>">✏️Editar</a>
+                        <a href="excluir.php?id=<?=$produto['ID'] ?>" class="excluir">✖️Excluir</a>
                     </td>
                 </tr>
 
