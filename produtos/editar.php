@@ -39,7 +39,8 @@
             </div>
             <div>
                 <label for="descricao">Descrição:</label>
-                <textarea name="descricao" id="descricao" rows="6" value="<?=$produto['descricao']?>"></textarea>
+                <!-- Não dê enter ou identação dentro da tag textarea, pois os espaços vão aparecer se fizer isso. Portando, deixe tudo na mesma linha -->
+                <textarea name="descricao" id="descricao" rows="6"><?=$produto['descricao']?></textarea>
             </div>
             <div>
                 <label for="preco">Preço:</label>
