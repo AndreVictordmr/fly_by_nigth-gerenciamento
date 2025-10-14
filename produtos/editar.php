@@ -32,6 +32,7 @@
     <body>
         <h1>Editar Produto</h1>
         <form action="" method="post">
+            <input type="hidden" name="id" value="<?=$produto['id']?>">
             <div>
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" value="<?=$produto['nome']?>" required>
