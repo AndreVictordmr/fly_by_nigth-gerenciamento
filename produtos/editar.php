@@ -1,19 +1,24 @@
 <?php 
-require_once "../src/fornecedor_crud.php";
-//Pegando da Url o valor do parametro chamado id
-$id= $_GET['id'];
+    require_once "../src/fornecedor_crud.php";
+    require_once "../src/produto-crud.php";
+    $fornecedores = buscarFornecedores($conexao);
 
-$fornecedor = buscarFornecedoresPorId($conexao,$id);
+    $id=$_GET['id'];
 
-if($_SERVER['REQUEST_METHOD']==='POST'){
-    $nome = $_POST['nome'];
-    atulizarFornecedor($conexao,$nome,$id);
-    //Após redirecionar usando header()...
-    header("location:lista.php");
-    //...Sempre encerre/interrompa o screipt(evitando erros/execuções adicionais)
-    exit;
-}
+    $produto = buscarPodutoPorId($conexao,$id);
+    if($_SERVER['REQUEST_METHOD']==="post"){
+        $id_fornecedor=$_POST['fornecedor'];
+        $nome=$_POST['nome'];
+        $descricao=$_POST['descricao'];
+        $preco=$_POST['preco'];
+        $quantidade=$_POST['quantidade'];
 
+        atualizarProduto($conexao,$nome,$descricao,$preco,$quantidade,$id_fornecedor,$id);
+
+        header("location:lista.php");
+        exit;
+
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,11 +31,30 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     <body>
         <h1>Editar Produto</h1>
         <form action="" method="post">
-            <input type="hidden" name="id" value="<?=$fornecedor['ID']?>">
             <div>
                 <label for="nome">Nome:</label>
-                <!-- atributo required indica um campo obrigatório-->
-                <input value="<?=$fornecedor['NOME'] ?>" type="text" name="nome" id="nome" required>
+                <input type="text" name="nome" id="nome" value="<?=$produto['nome']?>" required>
+            </div>
+            <div>
+                <label for="descricao">Descrição:</label>
+                <textarea name="descricao" id="descricao" rows="6" value="<?=$produto['descricao']?>"></textarea>
+            </div>
+            <div>
+                <label for="preco">Preço:</label>
+                <input value="<?=$produto['preco']?>" type="number"  name="preco" id="preco" require min="0" step="0.01">
+            </div>
+            <div>
+                <label for="quantidade">Quantidade:</label>
+                <input value="<?=$produto['quantidade']?>" type="number" name="quantidade" id="quantidade" min="0" require>
+            </div>
+            <div>
+                <label for="fornecedor">Fornecedor:</label>
+                <select name="fornecedor" id="fornecedor">
+                    <option value=""></option>
+                    <?php foreach($fornecedores as $fornecedor){?>
+                        <option value="<?=$fornecedor['ID']?>"><?=$fornecedor['NOME']?></option>
+                    <?php }?>
+                </select>
             </div>
             <button type="submit">Atualizar</button>
         </form>

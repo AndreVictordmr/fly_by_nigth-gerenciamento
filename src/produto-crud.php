@@ -24,7 +24,22 @@ function inserirProduto($conexao,$name,$descricao,$preco,$quantidade,$id_fornece
     
 }
 
-function buscarPodutosPorId($conexao,$id){
+function atualizarProduto($conexao,$name,$descricao,$preco,$quantidade,$id_fornecedor,$id){
+    $sql = "UPDATE PRODUTO SET NOME = :nome,DESCRICAO=:descricao,PRECO=:preco,QUANTIDADE=:quantidade,ID_FORNECEDOR=:id_f WHERE ID =:id ";
+    
+    $consulta=$conexao->prepare($sql);
+
+    $consulta->bindValue(":nome",$name);
+    $consulta->bindValue(":descricao",$descricao);
+    $consulta->bindValue(":preco",$preco);
+    $consulta->bindValue(":quantidade",$quantidade);
+    $consulta->bindValue(":id_f",$id_fornecedor);
+    $consulta->bindValue(":id",$id);
+
+    $consulta->execute();
+}
+
+function buscarPodutoPorId($conexao,$id){
     $sql = "SELECT * FROM PRODUTO WHERE ID = :id";
 
     $consulta = $conexao->prepare($sql);
