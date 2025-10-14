@@ -7,7 +7,7 @@
     $id=$_GET['id'];
 
     $produto = buscarPodutoPorId($conexao,$id);
-    if($_SERVER['REQUEST_METHOD']==="post"){
+    if($_SERVER['REQUEST_METHOD']==="POST"){
         $id_fornecedor=$_POST['fornecedor'];
         $nome=$_POST['nome'];
         $descricao=$_POST['descricao'];

@@ -30,7 +30,7 @@
                 
                 <tr>
                     <td><?=$produto['nome_produto']?></td>
-                    <td><?=$produto['PRECO']?></td>
+                    <td>R$<?=$produto['PRECO']?></td>
                     <td><?=$produto['QUANTIDADE']?></td>
                     <td><?=$produto['nome_fornecedor']?></td>
                     <td>
