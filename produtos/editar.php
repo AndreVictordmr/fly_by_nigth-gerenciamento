@@ -2,7 +2,8 @@
     require_once "../src/fornecedor_crud.php";
     require_once "../src/produto-crud.php";
     $fornecedores = buscarFornecedores($conexao);
-
+    // $_GET - Variavel responsavel para pegar dados na url
+    // $_POST - Variavel responsavel por pegar dados dos no campo formulario
     $id=$_GET['id'];
 
     $produto = buscarPodutoPorId($conexao,$id);
