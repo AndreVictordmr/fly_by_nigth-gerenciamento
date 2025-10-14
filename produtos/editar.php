@@ -55,7 +55,9 @@
                 <select name="fornecedor" id="fornecedor">
                     <option value=""></option>
                     <?php foreach($fornecedores as $fornecedor){?>
-                        <option value="<?=$fornecedor['ID']?>"><?=$fornecedor['NOME']?></option>
+                        <!-- Lógica de condicional abaixo é: 
+                         Se o ID do fornecedor aqui da lista de opções for IGUAL ao fornecedor do produto que escolhesmos editar, então faça com que fique selecionado. Caso contrario, não faça nada.--> 
+                        <option value="<?=$fornecedor['ID']?>" <?= $fornecedor['ID'] ===$produto["id_fornecedor"] ? "selected" : " " ?>><?=$fornecedor['NOME']?></option>
                     <?php }?>
                 </select>
             </div>
