@@ -16,7 +16,7 @@ $lojas = pegarEstoque($conexao);
         <title>Estoques Lojas</title>
     </head>
     <body>
-        <h1>Lojas</h1>
+        <h1>Estoque Lojas</h1>
         <a href="inserir.php">➕Adicionar Estoque</a>
         <a href="../index.php">⬅️Voltar</a>
 
