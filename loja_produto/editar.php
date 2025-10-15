@@ -27,12 +27,12 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     <body>
         <h1>Editar Estoque</h1>
         <form action="" method="post">
-            <input type="hidden" name="loja" value="<?=$loja['id_loja']?>">
-            <input type="hidden" name="produto" value="<?=$loja['id_produto']?>">
+            <p><strong>Loja: </strong><?=$loja['nome_loja']?></p>
+            <p><strong>Produto: </strong><?=$loja['nome_produto']?></p>
             <div>
                 <label for="estoque">Estoque:</label>
                 <!-- atributo required indica um campo obrigatório-->
-                <input value="<?=$loja['estoque'] ?>" type="text" name="estoque" id="nome" required>
+                <input value="<?=$loja['ESTOQUE'] ?>" type="text" name="estoque" id="nome" required>
             </div>
             <button type="submit">Atualizar</button>
         </form>

@@ -30,7 +30,7 @@ function atualizarEstoque($conexao,$idL,$idP,$quant){
 }
 
 function estoqueEspecifico($conexao,$idL,$idP){
-    $sql = "SELECT * FROM LOJA_PRODUTO WHERE ID_LOJA = :idL AND ID_PRODUTO = :idP";
+    $sql = "SELECT LOJA.NOME AS nome_loja, PRODUTO.NOME AS nome_produto, LOJA_PRODUTO.ESTOQUE FROM LOJA_PRODUTO JOIN LOJA ON LOJA.ID = LOJA_PRODUTO.ID_LOJA JOIN PRODUTO ON PRODUTO.ID = LOJA_PRODUTO.ID_PRODUTO WHERE ID_LOJA = :idL AND ID_PRODUTO = :idP";
     $consulta = $conexao->prepare($sql);
     $consulta->bindValue(":idL",$idL);
     $consulta->bindValue(":idP",$idP);
